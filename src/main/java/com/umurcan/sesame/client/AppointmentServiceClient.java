@@ -22,8 +22,10 @@ import com.umurcan.sesame.ApplicationCongfiguration;
 import com.umurcan.sesame.domain.Appointment;
 import com.umurcan.sesame.util.AppointmentClientResultAggragetor;
 
+import lombok.Setter;
 import lombok.val;
 
+@Setter
 @Service
 public class AppointmentServiceClient {
 	private final String appointmentServiceURL;
@@ -47,35 +49,6 @@ public class AppointmentServiceClient {
 
 		return mapToAppointment(strs);
 	}
-
-	//private void test() {
-		// val str =
-		// "{\"doctor\":{\"firstName\":\"Ross\",\"lastName\":\"Kreiger\"},\"durationInMinutes\":6,\"time\":\"2021-03-06
-		// 03:48:00\",\"service\":{\"name\":\"Enema\",\"price\":\"price\"},\"location\":{\"name\":\"New
-		// York City
-		// Clinic\",\"timeZoneCode\":\"America/New_York\"},\"id\":\"edcd8778-76b8-4b62-b5fa-28631d964a04\"}";
-		//// add error
-		// strs.add(
-		// "{\"doctor\":{\"firstName\":\"Ross\",\"lastName\":\"Kreiger\"},\"durationInMinutes\":6,\"time\":\"2021-03-06
-		// 03:48:00\",\"service\":{\"name\":\"Enema\",\"price\":\"price\"},\"location\":{\"name\":\"New
-		// York City
-		// Clinic\",\"timeZoneCode\":\"America/New_York\"},\"id\":\"edcd8778-76b8-4b62-b5fa-28631d964a04\"}");
-		//
-		// strs.add(
-		// "{\"durationInMinutes\":6,\"time\":\"2021-03-06
-		// 03:48:00\",\"service\":{\"name\":\"Enema\",\"price\":758},\"location\":{\"name\":\"New
-		// York City
-		// Clinic\",\"timeZoneCode\":\"America/New_York\"},\"id\":\"edcd8778-76b8-4b62-b5fa-28631d964a04\"}");
-		//
-		//
-		// ObjectMapper objectMapper = new ObjectMapper();
-		// try {
-		// Appointment app = objectMapper.readValue(str, Appointment.class);
-		// } catch (JsonProcessingException e) {
-		// // TODO Auto-generated catch block
-		// // e.printStackTrace();
-		// }
-	//}
 
 	private List<String> split(final String jsonArray) {
 		JsonNode jsonNode;
