@@ -4,6 +4,11 @@ This is an assesment game for Sesame
 
 #Running
 
+##Building
+>cd ${project_directory}
+
+>./mvnw clean install
+
 ##Tests
 >cd ${project_directory}
 
